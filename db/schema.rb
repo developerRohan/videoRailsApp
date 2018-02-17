@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180217064652) do
+ActiveRecord::Schema.define(version: 20180217082650) do
 
   create_table "videos", force: :cascade do |t|
     t.string "wistia"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20180217064652) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "title"
+    t.string "type"
   end
 
 end

@@ -1,0 +1,26 @@
+<%= form_with(model: video, local: true) do |form| %>
+  <% if video.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(video.errors.count, "error") %> prohibited this video from being saved:</h2>
+
+      <ul>
+      <% video.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="input-field">
+   <%= form.text_field :wistia, id: :video_wistia , :placeholder => 'Link' , :length => '10' %>
+  </div>
+  <div class="input-field">
+   <%= form.text_field :title , :placeholder => 'title' , :length => '20'%>
+  </div>
+
+  <div class="input-field">
+    <%= form.text_area :description, id: :video_description , :placeholder => 'description' , :length => '800' , :class => 'materialize-textarea' %>
+  </div>
+  <button class = "btn waves-effect waves-light" , type= 'submit' , name='action'>Submit</button>
+  <a href="<%= videos_path %>" , class = "btn waves-effect waves-light"  , name ='action'>Back</a>
+<% end %>
